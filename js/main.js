@@ -188,7 +188,7 @@ const translations = {
         foot_doc_cert: "Chứng nhận xưởng xanh",
         foot_doc_spec: "Tiêu chuẩn mật độ dệt",
         foot_doc_policy: "Chính sách bảo mật mẫu",
-        foot_made_by: "Thiết kế bởi Antigravity Studio",
+        foot_made_by: "Thiết kế bởi Danny Luu",
         foot_copy: "&copy; 2026 LOOMIA SAIGON. All rights reserved. Crafted for Prosperity (Hỏa & Mộc).",
 
         modal_succ_title: "Gửi Yêu Cầu Thành Công",
@@ -381,7 +381,7 @@ const translations = {
         foot_doc_cert: "Green Mill Certifications",
         foot_doc_spec: "Weave Density Standards",
         foot_doc_policy: "IP & Sample Protection",
-        foot_made_by: "Designed by Antigravity Studio",
+        foot_made_by: "Designed by Danny Luu",
         foot_copy: "&copy; 2026 LOOMIA SAIGON. All rights reserved. Woven for Prosperity (Fire & Wood).",
 
         modal_succ_title: "Request Sent Successfully",
