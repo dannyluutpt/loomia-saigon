@@ -1641,12 +1641,12 @@ textarea.form-input {
     pointer-events: none;
     display: flex;
     visibility: visible;
-    transition: visibility 0.8s;
+    transition: visibility 0.1s;
 }
 
 .curtain-overlay.open {
     visibility: hidden;
-    transition-delay: 0.8s;
+    transition-delay: 1.1s;
 }
 
 /* Background backing behind the valance */
@@ -1660,7 +1660,7 @@ textarea.form-input {
     border-bottom: 2px solid var(--gold-accent);
     z-index: 100000;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
     transform: translateY(0);
 }
 
@@ -1671,8 +1671,9 @@ textarea.form-input {
     left: 0;
     width: 100vw;
     height: 180px;
+    overflow: hidden;
     z-index: 100001;
-    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1) 0.05s;
+    transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
     transform: translateY(0);
 }
 
@@ -1771,11 +1772,12 @@ textarea.form-input {
 
 /* Curtain Panel definition */
 .curtain-panel {
-    width: 50.5vw;
+    width: 52vw;
     height: 100vh;
     position: absolute;
     top: 0;
-    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    overflow: hidden;
+    transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.85);
     z-index: 99999;
 }
@@ -1935,19 +1937,19 @@ textarea.form-input {
 
 /* Slide open transition states */
 .curtain-overlay.open .valance-backdrop {
-    transform: translateY(-105%);
+    transform: translateY(-115%);
 }
 
 .curtain-overlay.open .curtain-valance {
-    transform: translateY(-105%);
+    transform: translateY(-115%);
 }
 
 .curtain-overlay.open .curtain-left {
-    transform: translateX(-105%);
+    transform: translateX(-115%);
 }
 
 .curtain-overlay.open .curtain-right {
-    transform: translateX(105%);
+    transform: translateX(115%);
 }
 
 /* ==========================================

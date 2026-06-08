@@ -830,7 +830,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     curtains.classList.remove('open');
                     setTimeout(() => {
                         window.location.href = href;
-                    }, 800);
+                    }, 950);
                 } else {
                     window.location.href = href;
                 }
