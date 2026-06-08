@@ -1646,7 +1646,7 @@ textarea.form-input {
 
 .curtain-overlay.open {
     visibility: hidden;
-    transition-delay: 1.1s;
+    transition-delay: 1.0s;
 }
 
 /* Background backing behind the valance */
@@ -1935,21 +1935,25 @@ textarea.form-input {
     border-top: 6px solid #e5c158;
 }
 
-/* Slide open transition states */
+/* Slide open transition states — uses ease-IN so panels accelerate OUT with no slow-end freeze */
 .curtain-overlay.open .valance-backdrop {
-    transform: translateY(-115%);
+    transform: translateY(-130%);
+    transition: transform 0.85s cubic-bezier(0.55, 0, 1, 0.45);
 }
 
 .curtain-overlay.open .curtain-valance {
-    transform: translateY(-115%);
+    transform: translateY(-130%);
+    transition: transform 0.85s cubic-bezier(0.55, 0, 1, 0.45);
 }
 
 .curtain-overlay.open .curtain-left {
-    transform: translateX(-115%);
+    transform: translateX(-130%);
+    transition: transform 0.85s cubic-bezier(0.55, 0, 1, 0.45);
 }
 
 .curtain-overlay.open .curtain-right {
-    transform: translateX(115%);
+    transform: translateX(130%);
+    transition: transform 0.85s cubic-bezier(0.55, 0, 1, 0.45);
 }
 
 /* ==========================================
