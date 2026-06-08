@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title_config">Thiết kế vải mẫu | Loomia Saigon - Studio tương tác</title>
+    <meta name="description" content="Trải nghiệm ứng dụng cấu hình vải mẫu trực quan của Loomia Saigon. Tự chọn kiểu dệt, sợi dệt tự nhiên hợp mệnh phong thủy và ước lượng giá dệt thô tức thời.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+       LUXURIOUS PAGE TRANSITION CURTAINS
+       ========================================== -->
+    <div id="pageTransitionCurtains" class="curtain-overlay">
+        <div class="curtain-panel curtain-left"></div>
+        <div class="curtain-panel curtain-right"></div>
+    </div>
+
+    <!-- ==========================================
+       HEADER NAVIGATION (SHARED)
+       ========================================== -->
+    <header class="header-nav">
+        <div class="container header-container">
+            <a href="index.html" class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+                LOOMIA<span>SAIGON</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" data-i18n="nav_home">Trang chủ</a></li>
+                <li><a href="about.html" class="nav-link" data-i18n="nav_about">Giới thiệu</a></li>
+                <li><a href="services.html" class="nav-link" data-i18n="nav_services">Dịch vụ</a></li>
+                <li><a href="collection.html" class="nav-link" data-i18n="nav_products">Sản phẩm</a></li>
+                <li><a href="configurator.html" class="nav-link" data-i18n="nav_config">Thiết kế vải mẫu</a></li>
+                <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Liên hệ</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <div class="lang-switch">
+                    <button class="lang-btn active" onclick="switchLanguage('vi')">VI</button>
+                    <button class="lang-btn" onclick="switchLanguage('en')">EN</button>
+                </div>
+                <a href="configurator.html" class="btn btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;" data-i18n="cta_quote">
+                    Báo giá nhanh
+                </a>
+            </div>
+
+            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==========================================
+       SUBPAGE HERO BANNER
+       ========================================== -->
+    <section class="hero" style="height: 45vh; min-height: 350px;">
+        <div class="container hero-content">
+            <span class="hero-subtitle" data-i18n="cfg_tag">Thiết kế tùy chọn</span>
+            <h1 class="hero-title" style="font-size: clamp(2rem, 4.5vw, 3.8rem);" data-i18n="nav_config">Thiết kế vải mẫu</h1>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       INTERACTIVE CONFIGURATOR
+       ========================================== -->
+    <section class="configurator" style="background-color: var(--bg-deep);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <span class="section-tag" data-i18n="cfg_tag">Công cụ tương tác</span>
+                <h2 class="section-title" data-i18n="cfg_title">Cấu Hinh Vải Mẫu <span>Tự Động</span></h2>
+                <p class="section-desc" style="margin: 0 auto;" data-i18n="cfg_desc">
+                    Tùy biến nhanh các thông số dệt sợi, lựa chọn màu sắc phong thủy và ước tính nhanh chi phí sản xuất vải mẫu trực quan.
+                </p>
+            </div>
+
+            <div class="glass-panel configurator-grid">
+                <!-- Configuration Inputs -->
+                <div class="config-form-panel">
+                    <!-- Step 1: Weave Style -->
+                    <div class="config-section">
+                        <h4 class="config-title" data-i18n="cfg_step1">1. Chọn kiểu dệt sợi</h4>
+                        <div class="swatch-grid">
+                            <div class="swatch-option active" data-weave="plain" onclick="selectWeave('plain', 120000, 'Dệt Thoi / Plain Weave')">
+                                <svg class="swatch-icon" viewBox="0 0 24 24">
+                                    <path d="M4 4h16v16H4zM4 9h16M4 14h16M9 4v16M14 4v16" />
+                                </svg>
+                                <span class="swatch-label" data-i18n="w_plain">Dệt Thoi</span>
+                                <span class="swatch-sub" data-i18n="sub_plain">Cơ bản, bền bỉ</span>
+                            </div>
+                            <div class="swatch-option" data-weave="twill" onclick="selectWeave('twill', 145000, 'Dệt Chéo / Twill Weave')">
+                                <svg class="swatch-icon" viewBox="0 0 24 24">
+                                    <path d="M4 20L20 4M4 12L12 4M12 20L20 12" />
+                                </svg>
+                                <span class="swatch-label" data-i18n="w_twill">Dệt Chéo</span>
+                                <span class="swatch-sub" data-i18n="sub_twill">Chắc chắn, dày dặn</span>
+                            </div>
+                            <div class="swatch-option" data-weave="satin" onclick="selectWeave('satin', 180000, 'Dệt Sa-tin / Satin Silk')">
+                                <svg class="swatch-icon" viewBox="0 0 24 24">
+                                    <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 3a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+                                </svg>
+                                <span class="swatch-label" data-i18n="w_satin">Dệt Sa-tin</span>
+                                <span class="swatch-sub" data-i18n="sub_satin">Bóng bẩy, lướt mịn</span>
+                            </div>
+                            <div class="swatch-option" data-weave="jacquard" onclick="selectWeave('jacquard', 240000, 'Dệt Hoa Văn / Jacquard')">
+                                <svg class="swatch-icon" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <span class="swatch-label" data-i18n="w_jacquard">Jacquard</span>
+                                <span class="swatch-sub" data-i18n="sub_jacquard">Hoa văn dệt chìm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Fiber Type -->
+                    <div class="config-section">
+                        <h4 class="config-title" data-i18n="cfg_step2">2. Chọn thành phần sợi dệt</h4>
+                        <div class="swatch-grid">
+                            <div class="swatch-option active" data-fiber="silk" onclick="selectFiber('silk', 1.5, '100% Lụa Tự Nhiên (Bảo Lộc)')">
+                                <span class="swatch-label" data-i18n="f_silk">Lụa Tơ Tằm</span>
+                                <span class="swatch-sub" data-i18n="f_silk_sub">Óng ánh, sang trọng</span>
+                            </div>
+                            <div class="swatch-option" data-fiber="cotton" onclick="selectFiber('cotton', 0.8, '100% Cotton Hữu Cơ Thượng Hạng')">
+                                <span class="swatch-label" data-i18n="f_cotton">Organic Cotton</span>
+                                <span class="swatch-sub" data-i18n="f_cotton_sub">Mềm mại, thấm hút tốt</span>
+                            </div>
+                            <div class="swatch-option" data-fiber="linen" onclick="selectFiber('linen', 1.0, 'Sợi Lanh Tự Nhiên Thô Mộc')">
+                                <span class="swatch-label" data-i18n="f_linen">Linen Mộc</span>
+                                <span class="swatch-sub" data-i18n="f_linen_sub">Thông thoáng, cổ điển</span>
+                            </div>
+                            <div class="swatch-option" data-fiber="bamboo" onclick="selectFiber('bamboo', 1.1, 'Sợi Bamboo Kháng Khuẩn Nano')">
+                                <span class="swatch-label" data-i18n="f_bamboo">Bamboo</span>
+                                <span class="swatch-sub" data-i18n="f_bamboo_sub">Kháng khuẩn tự nhiên</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Colors -->
+                    <div class="config-section">
+                        <h4 class="config-title" data-i18n="cfg_step3">3. Chọn màu sắc dệt nhuộm phong thủy (Cát Tường)</h4>
+                        <div class="color-swatches">
+                            <div class="color-option active" style="background-color: #8C1C2B;" data-color-name="Đỏ Rượu Vang (Hỏa)" onclick="selectColor('#8C1C2B', 'Đỏ Rượu Vang (Bản Mệnh Hỏa)')"></div>
+                            <div class="color-option" style="background-color: #14251D;" data-color-name="Xanh Lục Bảo (Mộc)" onclick="selectColor('#14251D', 'Xanh Lục Bảo (Mộc sinh Hỏa - Cát Tường)')"></div>
+                            <div class="color-option" style="background-color: #E5C158;" data-color-name="Vàng Champagne (Kim)" onclick="selectColor('#E5C158', 'Vàng Champagne (Kim)')"></div>
+                            <div class="color-option" style="background-color: #A67B5B;" data-color-name="Nâu Đất Mộc (Thổ)" onclick="selectColor('#A67B5B', 'Nâu Đất Mộc (Thổ)')"></div>
+                            <div class="color-option" style="background-color: #DDA0DD;" data-color-name="Tím Mận Sang Trọng" onclick="selectColor('#DDA0DD', 'Tím Mận Sang Trọng (Hỏa)')"></div>
+                            <div class="color-option" style="background-color: #F5EBE6;" data-color-name="Kem Sợi Linen" onclick="selectColor('#F5EBE6', 'Kem Sợi Tự Nhiên')"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Quantity Slider -->
+                    <div class="config-section" style="margin-bottom: 0;">
+                        <h4 class="config-title" data-i18n="cfg_step4">4. Chiều dài yêu cầu (Mét)</h4>
+                        <div class="slider-group">
+                            <div class="slider-val-box">
+                                <span data-i18n="cfg_length_lbl">Tổng số mét dệt mẫu:</span>
+                                <span class="slider-val" id="lengthDisplay">1,000m</span>
+                            </div>
+                            <input type="range" class="range-slider" id="fabricLength" min="500" max="10000" step="100" value="1000" oninput="updateCalculator()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Preview / Calculation Output -->
+                <div class="config-result-panel">
+                    <div>
+                        <h4 class="config-title" style="margin-bottom: 2rem;" data-i18n="cfg_preview">Xem trước mặt vải mẫu</h4>
+                        <div class="config-preview-box">
+                            <div class="preview-fabric-weave" id="previewWeavePattern" style="background-image: radial-gradient(var(--text-light) 1px, transparent 1px);"></div>
+                            <div class="preview-fabric-color" id="previewColorBall" style="background-color: #8C1C2B;"></div>
+                            <span class="preview-name" id="previewFabricName">Silk Plain</span>
+                        </div>
+
+                        <ul class="summary-list">
+                            <li class="summary-item">
+                                <span data-i18n="cfg_lbl_weave">Kiểu dệt:</span>
+                                <span id="summaryWeave">Plain Weave</span>
+                            </li>
+                            <li class="summary-item">
+                                <span data-i18n="cfg_lbl_fiber">Chất liệu:</span>
+                                <span id="summaryFiber">Mulberry Silk</span>
+                            </li>
+                            <li class="summary-item">
+                                <span data-i18n="cfg_lbl_color">Màu sắc:</span>
+                                <span id="summaryColor">Burgundy Red</span>
+                            </li>
+                            <li class="summary-item">
+                                <span data-i18n="cfg_lbl_leadtime">Thời gian dệt mẫu dự kiến:</span>
+                                <span id="summaryLeadtime" style="color: var(--gold-accent);">12 Days</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="total-estimate-box">
+                            <div class="total-title" data-i18n="cfg_lbl_est_total">Ước tính giá dệt thô sơ bộ</div>
+                            <div class="total-price" id="totalCostDisplay">180,000,000 VND</div>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="openQuoteModal()" data-i18n="cfg_submit_btn">
+                            Đặt hàng vải mẫu ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       FOOTER SECTION (SHARED)
+       ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <svg class="logo-icon" viewBox="0 0 24 24" style="stroke: var(--primary-burgundy);">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                        LOOMIA<span>SAIGON</span>
+                    </a>
+                    <p style="font-size: 0.9rem; margin-bottom: 1.5rem;" data-i18n="foot_desc">
+                        Thương hiệu gia công vải mẫu sang trọng, đồng hành cát tường cùng các chủ thương hiệu mệnh Hỏa tại Việt Nam.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn">
+                            <svg class="social-btn-svg" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <svg class="social-btn-svg" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="social-btn">
+                            <svg class="social-btn-svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h5 class="footer-links-title" data-i18n="foot_title_nav">Menu chính</h5>
+                    <a href="index.html" class="footer-link" data-i18n="foot_nav_home">Trang chủ</a>
+                    <a href="about.html" class="footer-link" data-i18n="foot_nav_about">Về chúng tôi</a>
+                    <a href="services.html" class="footer-link" data-i18n="foot_nav_srv">Dịch vụ dệt</a>
+                    <a href="collection.html" class="footer-link" data-i18n="foot_nav_coll">Bộ sưu tập vải mẫu</a>
+                </div>
+
+                <div class="footer-links-col">
+                    <h5 class="footer-links-title" data-i18n="foot_title_doc">Tài liệu & Pháp lý</h5>
+                    <a href="#" class="footer-link" data-i18n="foot_doc_cert">Chứng nhận xưởng xanh</a>
+                    <a href="#" class="footer-link" data-i18n="foot_doc_spec">Tiêu chuẩn mật độ dệt</a>
+                    <a href="#" class="footer-link" data-i18n="foot_doc_policy">Chính sách bảo mật mẫu</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-i18n="foot_copy">&copy; 2026 LOOMIA SAIGON. All rights reserved. Crafted for Prosperity (Hỏa & Mộc).</p>
+                <p data-i18n="foot_made_by">Thiết kế bởi Antigravity Studio</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+       MODALS & SUCCESS POPUPS
+       ========================================== -->
+    <!-- Form Order Request Modal popup -->
+    <div class="modal-overlay" id="quoteFormModal">
+        <div class="modal-content-wrapper glass-panel" style="max-width: 600px;">
+            <button class="modal-close-btn" onclick="closeQuoteModal()" aria-label="Close Modal">
+                <svg class="modal-close-icon" viewBox="0 0 24 24">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <form id="quoteContactForm" onsubmit="handleFormSubmit(event)">
+                <h3 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;" data-i18n="form_title">Gửi Yêu Cầu <span>Mẫu Thử</span></h3>
+                
+                <div class="form-group">
+                    <label class="form-label" for="contactName" data-i18n="form_lbl_name">Họ và tên của bạn *</label>
+                    <input type="text" id="contactName" class="form-input" placeholder="Ví dụ: Nguyễn Văn A" data-i18n-placeholder="form_placeholder_name" required>
+                </div>
+                
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label class="form-label" for="contactEmail" data-i18n="form_lbl_email">Địa chỉ Email *</label>
+                        <input type="email" id="contactEmail" class="form-input" placeholder="ten@congty.com" data-i18n-placeholder="form_placeholder_email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contactPhone" data-i18n="form_lbl_phone">Số điện thoại *</label>
+                        <input type="tel" id="contactPhone" class="form-input" placeholder="0909xxxxxx" data-i18n-placeholder="form_placeholder_phone" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="contactCompany" data-i18n="form_lbl_company">Tên công ty / Thương hiệu thời trang</label>
+                    <input type="text" id="contactCompany" class="form-input" placeholder="Ví dụ: Saigon Fashion Brand" data-i18n-placeholder="form_placeholder_company">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="contactMessage" data-i18n="form_lbl_msg">Chi tiết yêu cầu kỹ thuật dệt mẫu</label>
+                    <textarea id="contactMessage" class="form-input" placeholder="Mô tả cấu hình dệt mẫu..." data-i18n-placeholder="form_placeholder_cfg_msg" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" data-i18n="form_submit_btn">
+                    Gửi yêu cầu dệt thử <span class="btn-icon">→</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal popup -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content-wrapper glass-panel" style="max-width: 450px; text-align: center; border-color: var(--gold-accent);">
+            <div class="service-icon-box" style="margin: 0 auto 1.5rem auto; background: var(--primary-burgundy); border-color: var(--gold-accent);">
+                <svg class="service-icon" viewBox="0 0 24 24" style="stroke: var(--text-light);">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+            </div>
+            <h3 class="section-title" style="font-size: 1.8rem; margin-bottom: 1rem;" data-i18n="modal_succ_title">Gửi Yêu Cầu Thành Công</h3>
+            <p style="margin-bottom: 2rem;" data-i18n="modal_succ_desc">
+                Cảm ơn bạn đã lựa chọn kết nối phong thủy cùng Loomia Saigon. Đội ngũ kỹ thuật dệt nhuộm của chúng tôi tại TP.HCM sẽ liên hệ tư vấn và gửi bảng báo giá kèm catalog vải mẫu thực tế trong vòng 2 giờ làm việc.
+            </p>
+            <button class="btn btn-primary" onclick="closeSuccessModal()" data-i18n="modal_succ_btn">Đóng cửa sổ</button>
+        </div>
+    </div>
+
+    <!-- JS Script -->
+    <script src="js/main.js"></script>
+</body>
+</html>
