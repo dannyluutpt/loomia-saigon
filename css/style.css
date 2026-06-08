@@ -267,28 +267,60 @@ section {
     gap: 2rem;
 }
 
+/* ── LOGO IMAGE ── */
 .nav-logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--text-light);
-    white-space: nowrap;
     flex-shrink: 0;
+    background: rgba(255,255,255,0.93);
+    border-radius: 8px;
+    padding: 3px 10px;
+    backdrop-filter: blur(6px);
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.nav-logo span {
-    color: var(--gold-accent);
+.header-nav.scrolled .nav-logo {
+    background: rgba(255,255,255,0.9);
+}
+
+.nav-logo:hover {
+    transform: scale(1.03);
+    background: rgba(255,255,255,1);
+}
+
+.logo-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    mix-blend-mode: multiply;
+}
+
+/* Footer logo — white pill background to contain white-bg logo on dark footer */
+.footer-logo {
+    display: inline-flex;
+    background: rgba(255,255,255,0.92);
+    border-radius: 10px;
+    padding: 6px 18px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.04);
+    background: rgba(255,255,255,1);
+}
+
+.footer-logo-img {
+    height: 72px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    mix-blend-mode: multiply;
 }
 
 .logo-icon {
-    width: 2.2rem;
-    height: 2.2rem;
-    stroke: var(--primary-burgundy);
-    fill: none;
-    stroke-width: 1.5;
+    display: none; /* replaced by <img> */
 }
 
 .nav-menu {
@@ -390,7 +422,7 @@ section {
     background: linear-gradient(135deg, rgba(5, 11, 8, 0.95) 40%, rgba(12, 21, 17, 0.6) 100%), 
                 url('../assets/hero_fabric.png') center/cover no-repeat;
     position: relative;
-    padding-top: 5rem;
+    padding-top: 7rem;
     overflow: hidden;
 }
 
@@ -416,9 +448,9 @@ section {
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: var(--gold-accent);
-    letter-spacing: 0.3em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
     display: block;
