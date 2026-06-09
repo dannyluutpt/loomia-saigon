@@ -446,11 +446,13 @@ section {
 .hero-subtitle {
     font-size: 0.9rem;
     color: var(--gold-accent);
-    letter-spacing: 0.18em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
+    margin-top: 2rem;
     display: block;
     animation: fadeInDown 1s ease forwards;
+    padding: 0 1rem;
 }
 
 .hero-title {
